@@ -1,40 +1,53 @@
+<!DOCTYPE html>
 <html>
-<header>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>Simple markers</title>
+	<style>
+      /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+      #map {
+      	height: 500px;
+      	width: 500px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+      	height: 100%;
+      	margin: 0;
+      	padding: 0;
+      }
+  </style>
+</head>
 
-	<link href="estilo.css" type="text/css" rel="stylesheet" />
-
-										 <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initialize" type="text/javascript"></script>
-										<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-										<script type="text/javascript" src="mapa.js"></script>
-										<script type="text/javascript" src="jquery-ui.custom.min.js"></script>
-</header>
-<body>
-
-
-	
-	<label class="control-label ttlh016 marginfive" for="button-upload">
-										<span data-original-title="Digite o endereço e clique no botão + para adicionar quantos desejar. Você pode escolher até 2 endereços para anunciar simultaneamente." data-toggle="tooltip" title="">Endereço de Atendimento</span>
-										</label>
-									<div class="boxinput">
-											  <div id="apresentacao1">
-												<form method="post" action="index.html">
-														<fieldset>
-														       <div class="boxinputcont" >
-																<input style="width: 82%;" value="" id="txtEndereco" name="txtEndereco"  placeholder="Rua, Bairro, Cidade, Estado"></input>
-																<input class="btn_mais" type="button" value="+" id="btnEndereco" name="btnEndereco" onclick="addendereco()">
-															</div>
-															<div class="ajuda_fixa">	Digite o endereço e clique no botão [+] para adicionar quantos desejar. Você pode escolher até 2 endereços para anunciar simultaneamente.</div>
-															<div id="mapa" style="display:none"></div>
-															<input type="text" id="txtLatitude" name="txtLatitude"  value="" style="display:none"/>
-															<input type="text" id="txtLongitude" name="txtLongitude" value="" style="display:none"/>
-															<input type="text" id="txtNome" name="txtNome" value="" style="display:none"/>
-														</fieldset>
-													</form>
-
-												</div>
+<link href="estilo.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="mapa.js"></script> 
+<script type="text/javascript" src="jquery-ui.custom.min.js"></script>
 
 
 
+<label class="control-label ttlh016 marginfive" for="button-upload">
+	<span data-original-title="Digite o endereço e clique no botão + para adicionar quantos desejar. Você pode escolher até 2 endereços para anunciar simultaneamente." data-toggle="tooltip" title="">Endereço:</span>
+</label>
+<div class="boxinput">
+	<div id="apresentacao1">
+		<form method="post" action="index.html">
+			<fieldset>
+				<div class="boxinputcont" >
+					<input style="width: 82%;" value="" id="txtEndereco" name="txtEndereco"  placeholder="Rua, Bairro, Cidade, Estado"></input>
+				</div>
+				<div id="mapa"></div>
+				<input type="text" id="txtLatitude" name="txtLatitude"  value="" />
+				<input type="text" id="txtLongitude" name="txtLongitude" value="" >
+				<input type="text" id="txtNome" name="txtNome" value=""/>
+			</fieldset>
+		</form>
 
+	</div>
+
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=initMap">
+</script>
 </body>
 </html>
